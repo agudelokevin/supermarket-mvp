@@ -12,12 +12,12 @@ namespace Supermarket_mvp.Presenters
     {
         private IPayModeView view;
         private IPayModeRepository repository;
-        private BindingSource payModeBidingSource;
+        private BindingSource payModeBindingSource;
         private IEnumerable<PayModeModel> payModelist;
 
         public PayModePresenter(IPayModeView view, IPayModeRepository repository)
         {
-            this.payModeBidingSource=new BindingSource();
+            this.payModeBindingSource=new BindingSource();
 
             this.view = view;
             this.repository = repository;
@@ -30,7 +30,7 @@ namespace Supermarket_mvp.Presenters
             this.view.SaveEvent += SavePayMode;
             this.view.CancelEvent += CancelAction;
 
-            this.view.SetPayModeListBildingSource(payModeBidingSource);
+            this.view.SetPayModeListBildingSource(payModeBindingSource);
             LoadAllPayModeList();
             this.view.show();
         }
@@ -38,7 +38,7 @@ namespace Supermarket_mvp.Presenters
         private void LoadAllPayModeList()
         {
             payModelist = repository.GetAll();
-            payModeBidingSource.DataSource = payModelist;
+            payModeBindingSource.DataSource = payModelist;
         }
 
         private void CancelAction(object? sender, EventArgs e)
@@ -68,16 +68,16 @@ namespace Supermarket_mvp.Presenters
 
         private void SearchPayMode(object? sender, EventArgs e)
         {
-            bool emptyValue = string.IsNullOrWhiteSpace(this.view.SeachValue);
+            bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
                 if(emptyValue==false)
             {
-                payModelist=repository.GetByValue(this.view.SeachValue);
+                payModelist=repository.GetByValue(this.view.SearchValue);
             }
             else
             {
                 payModelist=repository.GetAll();
             }
-                payModeBidingSource.DataSource= payModelist;
+                payModeBindingSource.DataSource= payModelist;
         }
     }
 }

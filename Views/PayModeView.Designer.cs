@@ -193,6 +193,7 @@
             // 
             DgPayMode.AllowUserToAddRows = false;
             DgPayMode.AllowUserToDeleteRows = false;
+            DgPayMode.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgPayMode.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgPayMode.Location = new Point(78, 104);
             DgPayMode.Name = "DgPayMode";
@@ -208,6 +209,7 @@
             BtnSearch.Name = "BtnSearch";
             BtnSearch.Size = new Size(88, 40);
             BtnSearch.TabIndex = 2;
+            BtnSearch.Text = "Search";
             BtnSearch.UseVisualStyleBackColor = true;
             // 
             // TxtSearch

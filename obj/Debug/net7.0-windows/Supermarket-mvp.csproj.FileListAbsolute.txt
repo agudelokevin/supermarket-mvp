@@ -41,3 +41,4 @@ C:\Users\Kevin\source\repos\Supermarket-mvp\bin\Debug\net7.0-windows\runtimes\wi
 C:\Users\Kevin\source\repos\Supermarket-mvp\bin\Debug\net7.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\Kevin\source\repos\Supermarket-mvp\obj\Debug\net7.0-windows\Supermarket-mvp.csproj.CopyComplete
 C:\Users\Kevin\source\repos\Supermarket-mvp\bin\Debug\net7.0-windows\Supermarket-mvp.dll.config
+C:\Users\Kevin\source\repos\Supermarket-mvp\obj\Debug\net7.0-windows\Supermarket_mvp.Views.MainView.resources
