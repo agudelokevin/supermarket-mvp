@@ -55,7 +55,7 @@ namespace Supermarket_mvp.Views
 
         public void show()
         {
-            throw new NotImplementedException();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
