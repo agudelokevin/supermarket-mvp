@@ -14,9 +14,11 @@ namespace Supermarket_mvp.Models
         public int Id { get; set; }
         [DisplayName("Pay Mode Name")]
         [Required(ErrorMessage ="Pay mode name is requered")]
-        [StringLength(50,MinimumLength =3,ErrorMessage ="Pay mode name must be between 3 and 50 characters")]
+        [StringLength(50,MinimumLength =3,
+            ErrorMessage ="Pay mode name must be between 3 and 50 characters")]
+
         public string Name { get; set; }
-        [DisplayName("Pay Mode Name")]
+        [DisplayName("Pay Mode Observation")]
         [Required(ErrorMessage = "Pay mode observation is requered")]
         [StringLength(200, MinimumLength = 3, ErrorMessage = "Pay mode observation must be between 3 and 200 characters")]
         public string Observation { get; set; }

@@ -37,10 +37,10 @@
             tabPage4 = new TabPage();
             tabControl3 = new TabControl();
             tabPagePayModeList = new TabPage();
+            BtnNew = new Button();
             BtnClose = new Button();
             BtnDelete = new Button();
             BtnEdit = new Button();
-            BtnNew = new Button();
             DgPayMode = new DataGridView();
             BtnSearch = new Button();
             TxtSearch = new TextBox();
@@ -76,7 +76,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(628, 12);
+            pictureBox1.Location = new Point(23, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(150, 72);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -87,7 +87,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(39, 31);
+            label1.Location = new Point(167, 35);
             label1.Name = "label1";
             label1.Size = new Size(140, 32);
             label1.TabIndex = 0;
@@ -136,10 +136,10 @@
             // 
             // tabPagePayModeList
             // 
+            tabPagePayModeList.Controls.Add(BtnNew);
             tabPagePayModeList.Controls.Add(BtnClose);
             tabPagePayModeList.Controls.Add(BtnDelete);
             tabPagePayModeList.Controls.Add(BtnEdit);
-            tabPagePayModeList.Controls.Add(BtnNew);
             tabPagePayModeList.Controls.Add(DgPayMode);
             tabPagePayModeList.Controls.Add(BtnSearch);
             tabPagePayModeList.Controls.Add(TxtSearch);
@@ -152,6 +152,18 @@
             tabPagePayModeList.Text = "Pay Mode List ";
             tabPagePayModeList.UseVisualStyleBackColor = true;
             // 
+            // BtnNew
+            // 
+            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnNew.BackgroundImage = (Image)resources.GetObject("BtnNew.BackgroundImage");
+            BtnNew.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnNew.Location = new Point(661, 46);
+            BtnNew.Name = "BtnNew";
+            BtnNew.Size = new Size(51, 40);
+            BtnNew.TabIndex = 8;
+            BtnNew.UseVisualStyleBackColor = true;
+            BtnNew.Click += BtnNew_Click;
+            // 
             // BtnClose
             // 
             BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -161,6 +173,7 @@
             BtnClose.Size = new Size(52, 44);
             BtnClose.TabIndex = 7;
             BtnClose.UseVisualStyleBackColor = true;
+            BtnClose.Click += BtnClose_Click;
             // 
             // BtnDelete
             // 
@@ -171,6 +184,7 @@
             BtnDelete.Size = new Size(52, 44);
             BtnDelete.TabIndex = 6;
             BtnDelete.UseVisualStyleBackColor = true;
+            BtnDelete.Click += BtnDelete_Click;
             // 
             // BtnEdit
             // 
@@ -181,17 +195,7 @@
             BtnEdit.Size = new Size(52, 44);
             BtnEdit.TabIndex = 5;
             BtnEdit.UseVisualStyleBackColor = true;
-            // 
-            // BtnNew
-            // 
-            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnNew.Image = (Image)resources.GetObject("BtnNew.Image");
-            BtnNew.Location = new Point(660, 22);
-            BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(52, 44);
-            BtnNew.TabIndex = 4;
-            BtnNew.UseVisualStyleBackColor = true;
-            BtnNew.Click += button1_Click;
+            BtnEdit.Click += BtnEdit_Click;
             // 
             // DgPayMode
             // 
@@ -292,8 +296,11 @@
             // 
             TxtPayModeId.Location = new Point(42, 78);
             TxtPayModeId.Name = "TxtPayModeId";
+            TxtPayModeId.ReadOnly = true;
             TxtPayModeId.Size = new Size(316, 23);
             TxtPayModeId.TabIndex = 3;
+            TxtPayModeId.Text = "0";
+            TxtPayModeId.TextAlign = HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -359,7 +366,6 @@
         private Button BtnClose;
         private Button BtnDelete;
         private Button BtnEdit;
-        private Button BtnNew;
         private DataGridView DgPayMode;
         private Button BtnSearch;
         private TextBox TxtSearch;
@@ -373,5 +379,6 @@
         private Label label5;
         private Label label4;
         private Label label3;
+        private Button BtnNew;
     }
 }
