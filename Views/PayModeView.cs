@@ -44,6 +44,7 @@ namespace Supermarket_mvp.Views
                 tabControl3.TabPages.Remove(tabPagePayModeList);
                 tabControl3.TabPages.Add(tabPagePayModeDetail);
                 tabPagePayModeDetail.Text = "Add New Pay Mode";
+                
 
 
             };
