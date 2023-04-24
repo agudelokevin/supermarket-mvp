@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.Views
 {
-    public partial class ProductView : Form,IProductView
+    public partial class ProductView : Form, IProductView
     {
         private bool isEdit;
         private bool isSuccessful;
@@ -41,9 +41,9 @@ namespace Supermarket_mvp.Views
             BtnNew.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabProductDetail);
+                tabControl1.TabPages.Remove(tabProductList);
                 tabControl1.TabPages.Add(tabProductDetail);
-                tabProductDetail.Text = "Add New Pay Mode";
+                tabProductDetail.Text = "Add New Product";
 
 
 
@@ -53,7 +53,7 @@ namespace Supermarket_mvp.Views
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabProductList);
                 tabControl1.TabPages.Add(tabProductDetail);
-                tabProductDetail.Text = "Edit Pay Mode";
+                tabProductDetail.Text = "Edit Product";
             };
 
             BtnSave.Click += delegate
@@ -74,7 +74,7 @@ namespace Supermarket_mvp.Views
             BtnDelete.Click += delegate
             {
 
-                var result = MessageBox.Show("Are you sure you want to delete the selected Pay Mode", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var result = MessageBox.Show("Are you sure you want to delete the selected Product", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
@@ -114,18 +114,18 @@ namespace Supermarket_mvp.Views
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-        public void SetProductListBildingSource(BindingSource payModeList)
+        public void SetProductListBildingSource(BindingSource productList)
         {
-            DgProduct.DataSource = payModeList;
+            DgProduct.DataSource = productList;
         }
 
         //singleton para controlar solo una instancia del formulario
-        private static PayModeView instance;
-        public static PayModeView GetInstance(Form parentContainer)
+        private static ProductView instance;
+        public static ProductView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new PayModeView();
+                instance = new ProductView();
                 instance.MdiParent = parentContainer;
 
 
@@ -141,11 +141,6 @@ namespace Supermarket_mvp.Views
                 instance.BringToFront();
             }
             return instance;
-        }
-
-        public void SetProductListBildingSource(BindingSource productList)
-        {
-            throw new NotImplementedException();
         }
 
         private void label2_Click(object sender, EventArgs e)

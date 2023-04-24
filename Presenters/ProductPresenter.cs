@@ -49,23 +49,23 @@ namespace Supermarket_mvp.Presenters
 
         private void SavePayMode(object? sender, EventArgs e)
         {
-            var product = new PayModeModel();
-            product.Id = Convert.ToInt32(view.PayModeId);
-            product.Name = view.PayModeName;
-            payMode.Observation = view.PayModeObservation;
+            var product = new ProductModel();
+            product.Id = Convert.ToInt32(view.ProductId);
+            product.Name = view.ProductName;
+            product.Observation = view.ProductObservation;
 
             try
             {
-                new Common.ModelDataValidation().Validate(payMode);
+                new Common.ModelDataValidation().Validate(product);
                 if (view.IsEdit)
                 {
-                    repository.Edit(payMode);
-                    view.Message = "PayMode edited successfuly";
+                    repository.Edit(product);
+                    view.Message = "Product edited successfuly";
                 }
                 else
                 {
-                    repository.Add(payMode);
-                    view.Message = "PayMode added successfuly";
+                    repository.Add(product);
+                    view.Message = "Product added successfuly";
                 }
                 view.IsSuccessful = true;
                 LoadAllPayModeList();
@@ -83,18 +83,18 @@ namespace Supermarket_mvp.Presenters
 
         private void CleanViewFields()
         {
-            view.PayModeId = "0";
-            view.PayModeName = "";
-            view.PayModeObservation = "";
+            view.ProductId = "0";
+            view.ProductName = "";
+            view.ProductObservation = "";
         }
 
         private void DelectSelectPayMode(object? sender, EventArgs e)
         {
             try
             {//se recupera el objeto de la fila seleccionada
-                var payMode = (PayModeModel)payModeBindingSource.Current;
+                var product = (PayModeModel)productBindingSource.Current;
 
-                repository.Delete(payMode.Id);
+                repository.Delete(product.Id);
                 view.IsSuccessful = true;
                 view.Message = "Pay Mode deleted successfully";
                 LoadAllPayModeList();
@@ -110,12 +110,12 @@ namespace Supermarket_mvp.Presenters
         private void LoadSelectPayModeToEdit(object? sender, EventArgs e)
         {
             //obtiene el objeto del datagridview 
-            var payMode = (PayModeModel)payModeBindingSource.Current;
+            var product = (ProductModel)productBindingSource.Current;
 
             //se cambia el contenido de la caja de texto por el objeto recuperado
-            view.PayModeId = payMode.Id.ToString();
-            view.PayModeName = payMode.Name;
-            view.PayModeObservation = payMode.Observation;
+            view.ProductId = product.Id.ToString();
+            view.ProductName = product.Name;
+            view.ProductObservation = product.Observation;
 
             //modo edicion
             view.IsEdit = true;
@@ -131,14 +131,14 @@ namespace Supermarket_mvp.Presenters
             bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
             if (emptyValue == false)
             {
-                payModeList = repository.GetByValue(this.view.SearchValue);
+                productList = repository.GetByValue(this.view.SearchValue);
             }
             else
             {
-                payModeList = repository.GetAll();
+                productList = repository.GetAll();
             }
-            payModeBindingSource.DataSource = payModeList;
+            productBindingSource.DataSource = productList;
         }
     }
 }
-}
+

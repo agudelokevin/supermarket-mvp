@@ -11,13 +11,13 @@ using Supermarket_mvp.Models;
 
 namespace Supermarket_mvp._Repositories
 {
-    internal class ProductRepository
+    internal class ProductRepository: BaseRepository,IProductRepository
     {
         public ProductRepository(string connectionString)
         {
             this.connectionString = connectionString;
         }
-        public void Add(PayModeModel payModeModel)
+        public void Add(ProductModel productModel)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
@@ -25,8 +25,8 @@ namespace Supermarket_mvp._Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = "INSERT INTO Product VALUES (@name, @observation)";
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = payModeModel.Name;
-                command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = payModeModel.Observation;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = productModel.Name;
+                command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = productModel.Observation;
                 command.ExecuteNonQuery();
             }
         }
@@ -38,7 +38,7 @@ namespace Supermarket_mvp._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM Product WHERE ProductId=@id";
+                command.CommandText = "DELETE FROM Product WHERE Product_Id=@id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.ExecuteNonQuery();
             }
@@ -46,7 +46,7 @@ namespace Supermarket_mvp._Repositories
 
         }
 
-        public void Edit(PayModeModel payModeModel)
+        public void Edit(ProductModel productModel)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
@@ -54,9 +54,9 @@ namespace Supermarket_mvp._Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"UPDATE  Product
-                                        SET ProductName =@name,
-                                        ProductObservation=@observation
-                                        WHERE ProductId=@id";
+                                        SET Product_Name =@name,
+                                        Product_Observation=@observation
+                                        WHERE Product_Id=@id";
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = productModel.Name;
                 command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = productModel.Observation;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = productModel.Id;
@@ -67,31 +67,31 @@ namespace Supermarket_mvp._Repositories
 
         public IEnumerable<ProductModel> GetAll()
         {
-            var payModeList = new List<ProductModel>();
+            var productList = new List<ProductModel>();
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
-            {
+            {      
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM Product ORDER BY ProductId DESC";
+                command.CommandText = "SELECT * FROM Product ORDER BY Product_Id DESC";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var payModeModel = new PayModeModel();
-                        payModeModel.Id = (int)reader["ProductId"];
-                        payModeModel.Name = reader["ProductName"].ToString();
-                        payModeModel.Observation = reader["ProductObservation"].ToString();
-                        payModeList.Add(productModel);
+                        var productModel = new ProductModel();
+                        productModel.Id = (int)reader["Product_Id"];
+                        productModel.Name = reader["Product_Name"].ToString();
+                        productModel.Observation = reader["Product_Observation"].ToString();
+                        productList.Add(productModel);
                     }
                 }
             }
             return productList;
         }
 
-        public IEnumerable<PayModeModel> GetByValue(string value)
+        IEnumerable<ProductModel> IProductRepository.GetByValue(string value)
         {
-            var productList = new List<PayModeModel>();
+            var productList = new List<ProductModel>();
             int productId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
             string productName = value;
             using (var connection = new SqlConnection(connectionString))
@@ -100,19 +100,19 @@ namespace Supermarket_mvp._Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"SELECT * FROM product
-                                    WHERE Productid=@id or ProductName LIKE @name+ '%'
-                                    ORDER By ProductId DESC";
+                                    WHERE Product_id=@id or Product_Name LIKE @name+ '%'
+                                    ORDER By Product_Id DESC";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = productId;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = productId;
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var payModeModel = new PayModeModel();
-                        payModeModel.Id = (int)reader["Pay_Mode_Id"];
-                        payModeModel.Name = reader["Pay_Mode_Name"].ToString();
-                        payModeModel.Observation = reader["Pay_Mode_Observation"].ToString();
-                        productList.Add(payModeModel);
+                        var productModel = new ProductModel();
+                        productModel.Id = (int)reader["Product_Id"];
+                        productModel.Name = reader["Product_Name"].ToString();
+                        productModel.Observation = reader["Product_Observation"].ToString();
+                        productList.Add(productModel);
                     }
                 }
             }
