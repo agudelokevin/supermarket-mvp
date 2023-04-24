@@ -259,8 +259,11 @@
             TxtProductId.Location = new Point(67, 52);
             TxtProductId.Margin = new Padding(3, 2, 3, 2);
             TxtProductId.Name = "TxtProductId";
+            TxtProductId.ReadOnly = true;
             TxtProductId.Size = new Size(162, 23);
             TxtProductId.TabIndex = 5;
+            TxtProductId.Text = "0";
+            TxtProductId.TextAlign = HorizontalAlignment.Right;
             // 
             // label5
             // 

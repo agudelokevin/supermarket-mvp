@@ -92,17 +92,17 @@ namespace Supermarket_mvp.Presenters
         {
             try
             {//se recupera el objeto de la fila seleccionada
-                var product = (PayModeModel)productBindingSource.Current;
+                var product = (ProductModel)productBindingSource.Current;
 
                 repository.Delete(product.Id);
                 view.IsSuccessful = true;
-                view.Message = "Pay Mode deleted successfully";
+                view.Message = "Product deleted successfully";
                 LoadAllPayModeList();
             }
             catch (Exception ex)
             {
                 view.IsSuccessful = false;
-                view.Message = "An error ocurred, could not delete pay mode";
+                view.Message = "An error ocurred, could not delete product";
 
             }
         }

@@ -74,7 +74,7 @@ namespace Supermarket_mvp.Views
             BtnDelete.Click += delegate
             {
 
-                var result = MessageBox.Show("Are you sure you want to delete the selected Product", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var result = MessageBox.Show("Are you sure you want to delete the selected Pay Mode", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
