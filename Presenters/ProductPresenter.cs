@@ -25,18 +25,18 @@ namespace Supermarket_mvp.Presenters
 
             this.view.SearchEvent += SearchPayMode;
 
-            this.view.AddNewEvent += AddNewPayMode;
-            this.view.EditEvent += LoadSelectPayModeToEdit;
+            this.view.AddNewEvent += AddNewProduct;
+            this.view.EditEvent += LoadSelectProductToEdit;
             this.view.DeleteEvent += DelectSelectPayMode;
             this.view.SaveEvent += SavePayMode;
             this.view.CancelEvent += CancelAction;
 
             this.view.SetProductListBildingSource(productBindingSource);
-            LoadAllPayModeList();
+            LoadAllProductList();
             this.view.Show();
         }
 
-        private void LoadAllPayModeList()
+        private void LoadAllProductList()
         {
             productList = repository.GetAll();
             productBindingSource.DataSource = productList;
@@ -68,7 +68,7 @@ namespace Supermarket_mvp.Presenters
                     view.Message = "Product added successfuly";
                 }
                 view.IsSuccessful = true;
-                LoadAllPayModeList();
+                LoadAllProductList();
                 CleanViewFields();
 
             }
@@ -97,7 +97,7 @@ namespace Supermarket_mvp.Presenters
                 repository.Delete(product.Id);
                 view.IsSuccessful = true;
                 view.Message = "Product deleted successfully";
-                LoadAllPayModeList();
+                LoadAllProductList();
             }
             catch (Exception ex)
             {
@@ -107,7 +107,7 @@ namespace Supermarket_mvp.Presenters
             }
         }
 
-        private void LoadSelectPayModeToEdit(object? sender, EventArgs e)
+        private void LoadSelectProductToEdit(object? sender, EventArgs e)
         {
             //obtiene el objeto del datagridview 
             var product = (ProductModel)productBindingSource.Current;
@@ -121,7 +121,7 @@ namespace Supermarket_mvp.Presenters
             view.IsEdit = true;
         }
 
-        private void AddNewPayMode(object? sender, EventArgs e)
+        private void AddNewProduct(object? sender, EventArgs e)
         {
             view.IsEdit = false;
         }

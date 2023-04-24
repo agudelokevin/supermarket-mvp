@@ -29,37 +29,37 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
             pictureBox1 = new PictureBox();
+            label1 = new Label();
             tabControl1 = new TabControl();
             tabProvidersList = new TabPage();
-            tabProvidersDetail = new TabPage();
-            DgProviders = new DataGridView();
-            label2 = new Label();
-            TxtSearch = new TextBox();
-            BtnSearch = new Button();
-            BtnNew = new Button();
-            BtnEdit = new Button();
-            BtnDelete = new Button();
-            BtnClose = new Button();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
             label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            TxtProvidersId = new TextBox();
-            TxtProvidersName = new TextBox();
-            TxtProvidersObservation = new TextBox();
-            BtnSave = new Button();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            BtnClose = new Button();
+            BtnDelete = new Button();
+            BtnEdit = new Button();
+            BtnNew = new Button();
+            BtnSearch = new Button();
+            TxtSearch = new TextBox();
+            label2 = new Label();
+            DgProviders = new DataGridView();
+            tabProvidersDetail = new TabPage();
             BtnCancel = new Button();
+            BtnSave = new Button();
+            TxtProvidersObservation = new TextBox();
+            TxtProvidersName = new TextBox();
+            TxtProvidersId = new TextBox();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabProvidersList.SuspendLayout();
-            tabProvidersDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgProviders).BeginInit();
+            tabProvidersDetail.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -72,16 +72,6 @@
             panel1.Size = new Size(800, 100);
             panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(126, 41);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Providers";
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.providers;
@@ -91,6 +81,16 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label1.Location = new Point(126, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(101, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Providers";
             // 
             // tabControl1
             // 
@@ -125,6 +125,133 @@
             tabProvidersList.Text = "Providers List ";
             tabProvidersList.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Location = new Point(652, 209);
+            label6.Name = "label6";
+            label6.Size = new Size(36, 15);
+            label6.TabIndex = 11;
+            label6.Text = "Close";
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Location = new Point(554, 209);
+            label5.Name = "label5";
+            label5.Size = new Size(40, 15);
+            label5.TabIndex = 10;
+            label5.Text = "Delete";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Location = new Point(652, 80);
+            label4.Name = "label4";
+            label4.Size = new Size(27, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Edit";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Location = new Point(554, 80);
+            label3.Name = "label3";
+            label3.Size = new Size(31, 15);
+            label3.TabIndex = 8;
+            label3.Text = "New";
+            // 
+            // BtnClose
+            // 
+            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnClose.BackgroundImage = Properties.Resources.cerrar;
+            BtnClose.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnClose.Location = new Point(652, 174);
+            BtnClose.Name = "BtnClose";
+            BtnClose.Size = new Size(47, 32);
+            BtnClose.TabIndex = 7;
+            BtnClose.UseVisualStyleBackColor = true;
+            // 
+            // BtnDelete
+            // 
+            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnDelete.BackgroundImage = Properties.Resources.delete;
+            BtnDelete.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnDelete.Location = new Point(554, 174);
+            BtnDelete.Name = "BtnDelete";
+            BtnDelete.Size = new Size(47, 32);
+            BtnDelete.TabIndex = 6;
+            BtnDelete.UseVisualStyleBackColor = true;
+            // 
+            // BtnEdit
+            // 
+            BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnEdit.BackgroundImage = Properties.Resources.edit;
+            BtnEdit.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnEdit.Location = new Point(652, 98);
+            BtnEdit.Name = "BtnEdit";
+            BtnEdit.Size = new Size(47, 32);
+            BtnEdit.TabIndex = 5;
+            BtnEdit.UseVisualStyleBackColor = true;
+            // 
+            // BtnNew
+            // 
+            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnNew.BackgroundImage = Properties.Resources._new;
+            BtnNew.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnNew.Location = new Point(554, 98);
+            BtnNew.Name = "BtnNew";
+            BtnNew.Size = new Size(47, 32);
+            BtnNew.TabIndex = 4;
+            BtnNew.UseVisualStyleBackColor = true;
+            // 
+            // BtnSearch
+            // 
+            BtnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnSearch.BackgroundImage = Properties.Resources.search;
+            BtnSearch.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnSearch.Location = new Point(396, 36);
+            BtnSearch.Name = "BtnSearch";
+            BtnSearch.Size = new Size(46, 40);
+            BtnSearch.TabIndex = 3;
+            BtnSearch.UseVisualStyleBackColor = true;
+            // 
+            // TxtSearch
+            // 
+            TxtSearch.Location = new Point(62, 54);
+            TxtSearch.Name = "TxtSearch";
+            TxtSearch.PlaceholderText = "Data to search";
+            TxtSearch.Size = new Size(191, 23);
+            TxtSearch.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label2.Location = new Point(62, 26);
+            label2.Name = "label2";
+            label2.Size = new Size(168, 25);
+            label2.TabIndex = 1;
+            label2.Text = "Search Providers";
+            // 
+            // DgProviders
+            // 
+            DgProviders.AllowUserToAddRows = false;
+            DgProviders.AllowUserToDeleteRows = false;
+            DgProviders.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            DgProviders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgProviders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgProviders.Location = new Point(56, 98);
+            DgProviders.Name = "DgProviders";
+            DgProviders.ReadOnly = true;
+            DgProviders.RowTemplate.Height = 25;
+            DgProviders.Size = new Size(386, 150);
+            DgProviders.TabIndex = 0;
+            // 
             // tabProvidersDetail
             // 
             tabProvidersDetail.Controls.Add(BtnCancel);
@@ -143,177 +270,15 @@
             tabProvidersDetail.Text = " Providers Detail";
             tabProvidersDetail.UseVisualStyleBackColor = true;
             // 
-            // DgProviders
+            // BtnCancel
             // 
-            DgProviders.AllowUserToAddRows = false;
-            DgProviders.AllowUserToDeleteRows = false;
-            DgProviders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgProviders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgProviders.Location = new Point(56, 98);
-            DgProviders.Name = "DgProviders";
-            DgProviders.ReadOnly = true;
-            DgProviders.RowTemplate.Height = 25;
-            DgProviders.Size = new Size(386, 150);
-            DgProviders.TabIndex = 0;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label2.Location = new Point(62, 26);
-            label2.Name = "label2";
-            label2.Size = new Size(168, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Search Providers";
-            // 
-            // TxtSearch
-            // 
-            TxtSearch.Location = new Point(62, 54);
-            TxtSearch.Name = "TxtSearch";
-            TxtSearch.PlaceholderText = "Data to search";
-            TxtSearch.Size = new Size(191, 23);
-            TxtSearch.TabIndex = 2;
-            // 
-            // BtnSearch
-            // 
-            BtnSearch.BackgroundImage = Properties.Resources.search;
-            BtnSearch.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnSearch.Location = new Point(396, 36);
-            BtnSearch.Name = "BtnSearch";
-            BtnSearch.Size = new Size(46, 40);
-            BtnSearch.TabIndex = 3;
-            BtnSearch.UseVisualStyleBackColor = true;
-            // 
-            // BtnNew
-            // 
-            BtnNew.BackgroundImage = Properties.Resources._new;
-            BtnNew.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnNew.Location = new Point(554, 98);
-            BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(47, 32);
-            BtnNew.TabIndex = 4;
-            BtnNew.UseVisualStyleBackColor = true;
-            // 
-            // BtnEdit
-            // 
-            BtnEdit.BackgroundImage = Properties.Resources.edit;
-            BtnEdit.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnEdit.Location = new Point(652, 98);
-            BtnEdit.Name = "BtnEdit";
-            BtnEdit.Size = new Size(47, 32);
-            BtnEdit.TabIndex = 5;
-            BtnEdit.UseVisualStyleBackColor = true;
-            // 
-            // BtnDelete
-            // 
-            BtnDelete.BackgroundImage = Properties.Resources.delete;
-            BtnDelete.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnDelete.Location = new Point(554, 174);
-            BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(47, 32);
-            BtnDelete.TabIndex = 6;
-            BtnDelete.UseVisualStyleBackColor = true;
-            // 
-            // BtnClose
-            // 
-            BtnClose.BackgroundImage = Properties.Resources.cerrar;
-            BtnClose.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnClose.Location = new Point(652, 174);
-            BtnClose.Name = "BtnClose";
-            BtnClose.Size = new Size(47, 32);
-            BtnClose.TabIndex = 7;
-            BtnClose.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(554, 80);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 8;
-            label3.Text = "label3";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(652, 80);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 9;
-            label4.Text = "label4";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(554, 209);
-            label5.Name = "label5";
-            label5.Size = new Size(38, 15);
-            label5.TabIndex = 10;
-            label5.Text = "label5";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(652, 219);
-            label6.Name = "label6";
-            label6.Size = new Size(38, 15);
-            label6.TabIndex = 11;
-            label6.Text = "label6";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label7.Location = new Point(66, 18);
-            label7.Name = "label7";
-            label7.Size = new Size(125, 25);
-            label7.TabIndex = 0;
-            label7.Text = "Providers Id";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label8.Location = new Point(66, 123);
-            label8.Name = "label8";
-            label8.Size = new Size(161, 25);
-            label8.TabIndex = 1;
-            label8.Text = "&Providers Name";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label9.Location = new Point(361, 81);
-            label9.Name = "label9";
-            label9.Size = new Size(221, 25);
-            label9.TabIndex = 2;
-            label9.Text = "Providers Observation";
-            // 
-            // TxtProvidersId
-            // 
-            TxtProvidersId.Location = new Point(66, 56);
-            TxtProvidersId.Name = "TxtProvidersId";
-            TxtProvidersId.PlaceholderText = "&Providers ID";
-            TxtProvidersId.Size = new Size(100, 23);
-            TxtProvidersId.TabIndex = 3;
-            // 
-            // TxtProvidersName
-            // 
-            TxtProvidersName.Location = new Point(66, 167);
-            TxtProvidersName.Name = "TxtProvidersName";
-            TxtProvidersName.PlaceholderText = "&Providers Name";
-            TxtProvidersName.Size = new Size(157, 23);
-            TxtProvidersName.TabIndex = 4;
-            // 
-            // TxtProvidersObservation
-            // 
-            TxtProvidersObservation.Location = new Point(361, 123);
-            TxtProvidersObservation.Multiline = true;
-            TxtProvidersObservation.Name = "TxtProvidersObservation";
-            TxtProvidersObservation.PlaceholderText = "&Providers Observation";
-            TxtProvidersObservation.Size = new Size(221, 80);
-            TxtProvidersObservation.TabIndex = 5;
+            BtnCancel.BackgroundImage = Properties.Resources.cancel;
+            BtnCancel.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnCancel.Location = new Point(361, 247);
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.Size = new Size(55, 36);
+            BtnCancel.TabIndex = 7;
+            BtnCancel.UseVisualStyleBackColor = true;
             // 
             // BtnSave
             // 
@@ -325,15 +290,63 @@
             BtnSave.TabIndex = 6;
             BtnSave.UseVisualStyleBackColor = true;
             // 
-            // BtnCancel
+            // TxtProvidersObservation
             // 
-            BtnCancel.BackgroundImage = Properties.Resources.cancel;
-            BtnCancel.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnCancel.Location = new Point(361, 247);
-            BtnCancel.Name = "BtnCancel";
-            BtnCancel.Size = new Size(55, 36);
-            BtnCancel.TabIndex = 7;
-            BtnCancel.UseVisualStyleBackColor = true;
+            TxtProvidersObservation.Location = new Point(361, 123);
+            TxtProvidersObservation.Multiline = true;
+            TxtProvidersObservation.Name = "TxtProvidersObservation";
+            TxtProvidersObservation.PlaceholderText = "&Providers Observation";
+            TxtProvidersObservation.Size = new Size(221, 80);
+            TxtProvidersObservation.TabIndex = 5;
+            // 
+            // TxtProvidersName
+            // 
+            TxtProvidersName.Location = new Point(66, 167);
+            TxtProvidersName.Name = "TxtProvidersName";
+            TxtProvidersName.PlaceholderText = "&Providers Name";
+            TxtProvidersName.Size = new Size(157, 23);
+            TxtProvidersName.TabIndex = 4;
+            // 
+            // TxtProvidersId
+            // 
+            TxtProvidersId.Location = new Point(66, 56);
+            TxtProvidersId.Name = "TxtProvidersId";
+            TxtProvidersId.PlaceholderText = "&Providers ID";
+            TxtProvidersId.ReadOnly = true;
+            TxtProvidersId.Size = new Size(100, 23);
+            TxtProvidersId.TabIndex = 3;
+            TxtProvidersId.Text = "0";
+            TxtProvidersId.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label9.Location = new Point(361, 81);
+            label9.Name = "label9";
+            label9.Size = new Size(221, 25);
+            label9.TabIndex = 2;
+            label9.Text = "Providers Observation";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label8.Location = new Point(66, 123);
+            label8.Name = "label8";
+            label8.Size = new Size(161, 25);
+            label8.TabIndex = 1;
+            label8.Text = "&Providers Name";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label7.Location = new Point(66, 18);
+            label7.Name = "label7";
+            label7.Size = new Size(125, 25);
+            label7.TabIndex = 0;
+            label7.Text = "Providers Id";
             // 
             // ProvidersView
             // 
@@ -350,9 +363,9 @@
             tabControl1.ResumeLayout(false);
             tabProvidersList.ResumeLayout(false);
             tabProvidersList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DgProviders).EndInit();
             tabProvidersDetail.ResumeLayout(false);
             tabProvidersDetail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DgProviders).EndInit();
             ResumeLayout(false);
         }
 
