@@ -44,5 +44,16 @@ namespace Supermarket_mvp.Properties {
                 return ((string)(this["product"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Supermarket;Integrated Securit" +
+            "y=True")]
+        public string Providers {
+            get {
+                return ((string)(this["Providers"]));
+            }
+        }
     }
 }
