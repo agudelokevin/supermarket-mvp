@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             panel1 = new Panel();
+            BtnProviders = new Button();
             BtnProduct = new Button();
             BtnExit = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
-            BtnProviders = new Button();
+            BtnCategories = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(BtnCategories);
             panel1.Controls.Add(BtnProviders);
             panel1.Controls.Add(BtnProduct);
             panel1.Controls.Add(BtnExit);
@@ -51,6 +53,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(208, 753);
             panel1.TabIndex = 0;
+            // 
+            // BtnProviders
+            // 
+            BtnProviders.BackgroundImage = Properties.Resources.providers;
+            BtnProviders.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnProviders.Location = new Point(25, 364);
+            BtnProviders.Name = "BtnProviders";
+            BtnProviders.Size = new Size(153, 73);
+            BtnProviders.TabIndex = 4;
+            BtnProviders.UseVisualStyleBackColor = true;
             // 
             // BtnProduct
             // 
@@ -64,7 +76,7 @@
             // 
             // BtnExit
             // 
-            BtnExit.BackgroundImage = (Image)resources.GetObject("BtnExit.BackgroundImage");
+            BtnExit.BackgroundImage = Properties.Resources.cerrar_sesion;
             BtnExit.BackgroundImageLayout = ImageLayout.Zoom;
             BtnExit.Dock = DockStyle.Bottom;
             BtnExit.Location = new Point(0, 707);
@@ -94,15 +106,15 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // BtnProviders
+            // BtnCategories
             // 
-            BtnProviders.BackgroundImage = Properties.Resources.providers;
-            BtnProviders.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProviders.Location = new Point(25, 364);
-            BtnProviders.Name = "BtnProviders";
-            BtnProviders.Size = new Size(153, 73);
-            BtnProviders.TabIndex = 4;
-            BtnProviders.UseVisualStyleBackColor = true;
+            BtnCategories.BackgroundImage = Properties.Resources.opciones;
+            BtnCategories.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnCategories.Location = new Point(25, 477);
+            BtnCategories.Name = "BtnCategories";
+            BtnCategories.Size = new Size(153, 73);
+            BtnCategories.TabIndex = 5;
+            BtnCategories.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
@@ -127,5 +139,6 @@
         private Button BtnExit;
         private Button BtnProduct;
         private Button BtnProviders;
+        private Button BtnCategories;
     }
 }
