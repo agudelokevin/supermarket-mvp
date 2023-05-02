@@ -61,8 +61,8 @@ namespace Supermarket_mvp.Views
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
-                    tabControl1.TabPages.Remove(tabProvidersList);
-                    tabControl1.TabPages.Add(tabProvidersDetail);
+                    tabControl1.TabPages.Add(tabProvidersList);
+                    tabControl1.TabPages.Remove(tabProvidersDetail);
 
 
                 }
@@ -90,8 +90,8 @@ namespace Supermarket_mvp.Views
             BtnCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabProvidersList);
-                tabControl1.TabPages.Add(tabProvidersDetail);
+                tabControl1.TabPages.Add(tabProvidersList);
+                tabControl1.TabPages.Remove(tabProvidersDetail);
 
 
             };

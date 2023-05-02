@@ -61,8 +61,8 @@ namespace Supermarket_mvp.Views
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
-                    tabControl1.TabPages.Remove(tabProductList);
-                    tabControl1.TabPages.Add(tabProductDetail);
+                    tabControl1.TabPages.Remove(tabCategoriesDetail);
+                    tabControl1.TabPages.Add(tabCategoriesList);
 
 
                 }
@@ -90,8 +90,8 @@ namespace Supermarket_mvp.Views
             BtnCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabProductList);
-                tabControl1.TabPages.Add(tabProductDetail);
+                tabControl1.TabPages.Remove(tabCategoriesDetail);
+                tabControl1.TabPages.Add(tabCategoriesList);
 
 
             };
@@ -99,9 +99,9 @@ namespace Supermarket_mvp.Views
 
         }
 
-        public string ProductId { get { return TxtProductId.Text; } set { TxtProductId.Text = value; } }
-        public string ProductName { get { return TxtProductName.Text; } set { TxtProductName.Text = value; } }
-        public string ProductObservation { get { return TxtProductObservation.Text; } set { TxtProductObservation.Text = value; } }
+        public string CategoriesId { get { return TxtCategoriesId.Text; } set { TxtCategoriesId.Text = value; } }
+        public string CategoriesName { get { return TxtCategoriesName.Text; } set { TxtCategoriesName.Text = value; } }
+        public string CategoriesObservation { get { return TxtCategoriesObservation.Text; } set { TxtCategoriesObservation.Text = value; } }
         public string SearchValue { get { return TxtSearch.Text; } set { TxtSearch.Text = value; } }
         public bool IsEdit { get { return isEdit; } set { isEdit = value; } }
         public bool IsSuccessful { get { return isSuccessful; } set { isSuccessful = value; } }
@@ -114,18 +114,13 @@ namespace Supermarket_mvp.Views
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-        public void SetProductListBildingSource(BindingSource productList)
-        {
-            DgProduct.DataSource = productList;
-        }
-
         //singleton para controlar solo una instancia del formulario
-        private static ProductView instance;
-        public static ProductView GetInstance(Form parentContainer)
+        private static CategoriesView instance;
+        public static CategoriesView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new ProductView();
+                instance = new CategoriesView();
                 instance.MdiParent = parentContainer;
 
 
@@ -141,6 +136,11 @@ namespace Supermarket_mvp.Views
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        public void SetCategoriesListBildingSource(BindingSource categoriesList)
+        {
+            DgCategories.DataSource = categoriesList;
         }
     }
 }

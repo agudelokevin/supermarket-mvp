@@ -219,7 +219,6 @@
             BtnSearch.Name = "BtnSearch";
             BtnSearch.Size = new Size(88, 40);
             BtnSearch.TabIndex = 2;
-            BtnSearch.Text = "Search";
             BtnSearch.UseVisualStyleBackColor = true;
             // 
             // TxtSearch

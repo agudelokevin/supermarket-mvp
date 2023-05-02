@@ -45,3 +45,4 @@ C:\Users\Kevin\source\repos\Supermarket-mvp\obj\Debug\net7.0-windows\ref\Superma
 C:\Users\Kevin\source\repos\Supermarket-mvp\obj\Debug\net7.0-windows\Supermarket_mvp.Views.ProductView.resources
 C:\Users\Kevin\source\repos\Supermarket-mvp\obj\Debug\net7.0-windows\Supermarket_mvp.Views.ProvidersView.resources
 C:\Users\Kevin\source\repos\Supermarket-mvp\obj\Debug\net7.0-windows\Supermarket_mvp.Views.CategoriesView.resources
+C:\Users\Kevin\source\repos\Supermarket-mvp\obj\Debug\net7.0-windows\Supermarket_mvp.Views.ControlVentas.resources

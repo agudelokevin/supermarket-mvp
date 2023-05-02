@@ -106,7 +106,7 @@ namespace Supermarket_mvp._Repositories
                 {
                     while (reader.Read())
                     {
-                        var categoriesModel = new categoriesModel();
+                        var categoriesModel = new CategoriesModel();
                         categoriesModel.Id = (int)reader["Categories_Id"];
                         categoriesModel.Name = reader["Categories_Name"].ToString();
                         categoriesModel.Observation = reader["Categories_Observation"].ToString();

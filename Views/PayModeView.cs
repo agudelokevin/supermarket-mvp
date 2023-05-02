@@ -21,8 +21,8 @@ namespace Supermarket_mvp.Views
             AssociateAndRaiseViewEvents();
 
             tabControl3.TabPages.Remove(tabPagePayModeDetail);
-            BtnClose.Click += delegate {this.Close();};
-           
+            BtnClose.Click += delegate { this.Close(); };
+
 
         }
 
@@ -44,7 +44,7 @@ namespace Supermarket_mvp.Views
                 tabControl3.TabPages.Remove(tabPagePayModeList);
                 tabControl3.TabPages.Add(tabPagePayModeDetail);
                 tabPagePayModeDetail.Text = "Add New Pay Mode";
-                
+
 
 
             };
@@ -61,10 +61,10 @@ namespace Supermarket_mvp.Views
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
-                    tabControl3.TabPages.Remove(tabPagePayModeList);
-                    tabControl3.TabPages.Add(tabPagePayModeDetail);
+                    tabControl3.TabPages.Remove(tabPagePayModeDetail);
+                    tabControl3.TabPages.Add(tabPagePayModeList);
 
-
+                    
                 }
                 MessageBox.Show(Message);
 
@@ -90,8 +90,8 @@ namespace Supermarket_mvp.Views
             BtnCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
-                tabControl3.TabPages.Remove(tabPagePayModeList);
-                tabControl3.TabPages.Add(tabPagePayModeDetail);
+                tabControl3.TabPages.Remove(tabPagePayModeDetail);
+                tabControl3.TabPages.Add(tabPagePayModeList);
 
 
             };
@@ -122,14 +122,14 @@ namespace Supermarket_mvp.Views
         //singleton para controlar solo una instancia del formulario
         private static PayModeView instance;
         public static PayModeView GetInstance(Form parentContainer)
-        { 
+        {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new PayModeView();
                 instance.MdiParent = parentContainer;
 
 
-               instance.FormBorderStyle = FormBorderStyle.None;
+                instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
             }
             else
@@ -170,7 +170,7 @@ namespace Supermarket_mvp.Views
 
         private void BtnNew_Click(object sender, EventArgs e)
         {
-           
+
         }
 
     }
